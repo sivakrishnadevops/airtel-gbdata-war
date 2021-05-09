@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef resource="org/cruxframework/crux/tools/crux-module-tools.xml">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+  </taskdef>
+  <blockremove file="E:\krishnadevops\myprojects\airtel\datapack\gbdata\target/gbdata/WEB-INF/web.xml" beginmarker="&lt;!--antReplacementBlockBegin--&gt;" endmarker="&lt;!--antReplacementBlockEnd--&gt;"/>
+  <serviceMapper projectDir="E:\krishnadevops\myprojects\airtel\datapack\gbdata\target/gbdata">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+      <pathelement path="E:\krishnadevops\myprojects\airtel\datapack\gbdata\target/gbdata/WEB-INF/classes/"/>
+    </classpath>
+  </serviceMapper>
+  <cruxmodulecompiler outputDir="E:\krishnadevops\myprojects\airtel\datapack\gbdata\target/gbdata" keepPagesGeneratedFiles="true" webDir="E:\krishnadevops\myprojects\airtel\datapack\gbdata\target/gbdata" pagesOutputDir="E:\krishnadevops\myprojects\airtel\datapack\gbdata\target/gbdata" pageFileExtension="html" srcDir="E:\krishnadevops\myprojects\airtel\datapack\gbdata\src\main\java" outputCharset="UTF-8" doNotPreCompileJavaSource="true">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+    <jvmarg value="-Xmx768M"/>
+    <jvmarg value="-Xms256M"/>
+    <arg value="-localWorkers"/>
+    <arg value="2"/>
+  </cruxmodulecompiler>
+</target>
+</project>
